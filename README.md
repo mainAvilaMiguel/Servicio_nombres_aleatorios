@@ -1,7 +1,9 @@
+# GENERADOR DE NOMBRES ALEATORIOS
 PARA EJECUTAR EL PROYECTO
-Entre a src/main/java
-seleccione java\com\example\demo
-Abra el archivo DemoApplication.java y corra el archivo
+1. Entre a src/main/java
+2. seleccione java\com\example\demo
+3. Abra el archivo DemoApplication.java y corra el archivo
 
 COMPROBAR EL SERVICIO WEB
-entre al navegador y escriba localhost:8080, y realice la busqueda
+1. Entre al navegador y escriba localhost:8080
+2. Realice la busqueda
