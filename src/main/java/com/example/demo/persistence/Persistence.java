@@ -1,18 +1,16 @@
 package com.example.demo.persistence;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class Persistence {
     	public ArrayList<String> readNamesFile() {
 		ArrayList<String> namesArray = new ArrayList<String>();
-		String ruta = "src\\main\\resources\\Nombres.txt";
-		try {
-			BufferedReader br = new BufferedReader(new FileReader(ruta));
-			String linea;
-			while ((linea = br.readLine()) != null) {
+			try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("Nombres.txt");
+
+				 BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))){
+				 String linea;
+			while ((linea = br.readLine()) !=null) {
 				namesArray.add(linea);
 			}
 			br.close();
@@ -22,10 +20,9 @@ public class Persistence {
 		return namesArray;
 	}
 	public ArrayList<String> readLastNamesFile() {
-		String ruta = "src\\main\\resources\\Apellidos.txt";
 		ArrayList<String> lastNames = new ArrayList<String>();
-		try {
-			BufferedReader br = new BufferedReader(new FileReader(ruta));
+		try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("Apellidos.txt");
+			 BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))){
 			String linea;
 			while ((linea = br.readLine()) != null) {
 				lastNames.add(linea);
