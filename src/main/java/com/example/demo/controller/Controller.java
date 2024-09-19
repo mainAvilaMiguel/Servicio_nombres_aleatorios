@@ -20,7 +20,6 @@ public class Controller {
 	public String run() {
 		return "Nombre: "+ this.selectName()+" "+this.selectLastName();
 	}
-
 	public String selectLastName(){
 		ArrayList<String> lastNamesList = persistence.readLastNamesFile();
 		return lastNamesList.get(model.generateRandomLastName(lastNamesList));

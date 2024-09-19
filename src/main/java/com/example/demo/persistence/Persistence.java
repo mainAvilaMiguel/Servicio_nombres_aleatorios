@@ -6,9 +6,8 @@ import java.util.ArrayList;
 public class Persistence {
     	public ArrayList<String> readNamesFile() {
 		ArrayList<String> namesArray = new ArrayList<String>();
-			try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("Nombres.txt");
-
-				 BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))){
+		String nameRoute =System.getProperty("user.dir")+"/Libraries/Nombres.txt";
+		try (BufferedReader br = new BufferedReader(new FileReader(nameRoute))){
 				 String linea;
 			while ((linea = br.readLine()) !=null) {
 				namesArray.add(linea);
@@ -21,8 +20,8 @@ public class Persistence {
 	}
 	public ArrayList<String> readLastNamesFile() {
 		ArrayList<String> lastNames = new ArrayList<String>();
-		try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("Apellidos.txt");
-			 BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))){
+		String lastNamesRoute = System.getProperty("user.dir")+"/Libraries/Apellidos.txt";
+		try (BufferedReader br = new BufferedReader(new FileReader(lastNamesRoute))){
 			String linea;
 			while ((linea = br.readLine()) != null) {
 				lastNames.add(linea);
