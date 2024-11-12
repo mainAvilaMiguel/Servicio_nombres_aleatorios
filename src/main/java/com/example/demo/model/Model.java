@@ -20,7 +20,7 @@ public class Model {
 	}
 	public double division(double numerator, double denominator){
 		if(denominator==0) {
-			logger.info(" Metodo division");
+			logger.error(" Metodo division");
 		}
 		return numerator/denominator;
 	}
