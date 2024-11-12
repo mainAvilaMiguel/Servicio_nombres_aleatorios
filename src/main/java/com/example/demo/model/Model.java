@@ -18,7 +18,7 @@ public class Model {
 		Random rand = new Random();
 		return rand.nextInt(arrayLastName.size());
 	}
-	public int division(int numerator, int denominator){
+	public double division(double numerator, double denominator){
 		if(denominator==0) {
 			logger.info(" Metodo division");
 		}

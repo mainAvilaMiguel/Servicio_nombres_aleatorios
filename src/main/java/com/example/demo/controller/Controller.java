@@ -41,7 +41,7 @@ public class Controller {
 		return namesList.get(model.generateRandomName(namesList));	
 	}
 	@GetMapping("/division")
-	public String division(@RequestParam int numerator, @RequestParam int divisor){
+	public String division(@RequestParam double numerator, @RequestParam double divisor){
 			logger.info("doing the division with parameters: numerator = {}, denominator = {}", numerator, divisor);
 			return "Resultado: "+model.division(numerator,divisor);
     }
